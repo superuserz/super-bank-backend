@@ -1,4 +1,4 @@
-package com.superuserz.superbank;
+package com.superuserz.superbank.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Data

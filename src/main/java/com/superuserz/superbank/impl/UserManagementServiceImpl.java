@@ -1,6 +1,6 @@
 package com.superuserz.superbank.impl;
 
-import com.superuserz.superbank.Customer;
+import com.superuserz.superbank.entity.Customer;
 import com.superuserz.superbank.repository.CustomerRepository;
 import com.superuserz.superbank.service.UserManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -35,6 +34,6 @@ public class UserManagementServiceImpl implements UserManagementService {
             password = customerList.get(0).getPassword();
             authorities.add(new SimpleGrantedAuthority(customerList.get(0).getRole()));
         }
-        return new User(username, password, authorities);
+        return new User(customerId, password, authorities);
     }
 }
