@@ -1,6 +1,6 @@
 package com.superuserz.superbank.repository;
 
-import com.superuserz.superbank.Customer;
+import com.superuserz.superbank.entity.Customer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

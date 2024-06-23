@@ -1,6 +1,6 @@
 package com.superuserz.superbank.impl;
 
-import com.superuserz.superbank.Customer;
+import com.superuserz.superbank.entity.Customer;
 import com.superuserz.superbank.repository.CustomerRepository;
 import com.superuserz.superbank.service.UserManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,10 +23,10 @@ public class UserManagementServiceImpl implements UserManagementService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        String customerId = null;
+        Integer customerId = null;
         String password = null;
         List<GrantedAuthority> authorities = new ArrayList<>();
-        List<Customer> customerList = customerRepository.findByEmail(username);
+        List<Customer> customerList = customerRepository.findByEmail(username.trim());
         if(customerList.size() == 0) {
             throw new UsernameNotFoundException(username);
         } else {
