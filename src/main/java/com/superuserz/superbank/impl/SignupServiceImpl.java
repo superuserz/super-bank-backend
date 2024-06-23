@@ -28,7 +28,6 @@ public class SignupServiceImpl implements SignupService {
         if(customerRepository.findByEmail(request.getEmail()).size() > 0) {
             return "You are already registered";
         }
-
         Customer customer = new Customer();
         customer.setEmail(request.getEmail().trim());
         customer.setPassword(request.getPassword().trim());
